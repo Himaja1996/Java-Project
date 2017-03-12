@@ -15,74 +15,74 @@ public class SanskritLineConvert
         boolean foundError = false;
         char [] arrayProcessed;
 	    public void wordConvert (String input)
-	          {
-				 singleWord = input;
-				 setSets ();
-                 nagari = "";
-                 diacritics = "";
-				 if (input.length () == 0)
-				   {
-					   foundError = true;
-				       errorString = "Illegal: Empty input string.";
-				       return;
-				   }
+	    {
+        singleWord = input;
+        setSets ();
+        nagari = "";
+        diacritics = "";
+  			if (input.length () == 0)
+  			{
+          foundError = true;
+  				errorString = "Illegal: Empty input string.";
+  				return;
+  			}
 
-				 if (notAllowedInitChars.contains (input.charAt (0)))
-				   {
-					   foundError = true;
-				       errorString = "Illegal init char: " + input.charAt (0);
-				       nagari = diacritics = errorString;
-				       return;
-				   }
+				if (notAllowedInitChars.contains (input.charAt (0)))
+				{
+          foundError = true;
+				  errorString = "Illegal init char: " + input.charAt (0);
+				  nagari = diacritics = errorString;
+				  return;
+				}
 
-				 for (int i = 0; i < input.length (); i ++)
-				    {
-				       if (!(allowedChars.contains (input.charAt (i))))
-				         {
-					         foundError = true;
-				             errorString = "Illegal char: " + input.charAt (i);
-				             nagari = diacritics = errorString;
-				             return;
-				         }
-				    }
-				 for (int i = 1; i < input.length (); i ++)
-				    {
-				       if (input.charAt (i) == '\'')
-				         if (input.charAt (i - 1) != 's')
-				           {
-						   	   foundError = true;
-						   	   errorString = "Illegal char: " + input.charAt (i);
-						   	   nagari = diacritics = errorString;
-						   	   return;
-						   	}
-				    }
-				 for (int i = 1; i < input.length (); i ++)
-				    {
-				       if (input.charAt (i) == '<' || input.charAt (i) == '>')
-				         if (input.charAt (i - 1) != 'n')
-				           {
-						   	   foundError = true;
-						   	   errorString = "Illegal char: " + input.charAt (i);
-						   	   nagari = diacritics = errorString;
-						   	   return;
-						   	}
-				    }
-				 for (int i = 1; i < input.length (); i ++)
-				    {
-				       if (input.charAt (i) == '.')
-				         if (!(input.charAt (i - 1) == 'r' || input.charAt (i - 1) == 's' || input.charAt (i - 1) == 'n' || input.charAt (i - 1) == 't' || input.charAt (i - 1) == 'd'))
-				           {
-						   	   foundError = true;
-						   	   errorString = "Illegal char: " + input.charAt (i);
-						   	   nagari = diacritics = errorString;
-						   	   return;
-						   	}
-				    }
-                 String inputA = input;
+				for (int i = 0; i < input.length (); i ++)
+				{
+          if (!(allowedChars.contains (input.charAt (i))))
+				  {
+            foundError = true;
+				    errorString = "Illegal char: " + input.charAt (i);
+				    nagari = diacritics = errorString;
+				    return;
+		      }
+				}
+				for (int i = 1; i < input.length (); i ++)
+				{
+          if (input.charAt (i) == '\'')
+				      if (input.charAt (i - 1) != 's')
+				      {
+                foundError = true;
+						   	errorString = "Illegal char: " + input.charAt (i);
+						   	nagari = diacritics = errorString;
+						   	return;
+						  }
+				}
+				for (int i = 1; i < input.length (); i ++)
+				{
+          if (input.charAt (i) == '<' || input.charAt (i) == '>')
+				      if (input.charAt (i - 1) != 'n')
+				      {
+                foundError = true;
+						   	errorString = "Illegal char: " + input.charAt (i);
+						   	nagari = diacritics = errorString;
+						   	return;
+						  }
+				}
+				for (int i = 1; i < input.length (); i ++)
+				{
+          if (input.charAt (i) == '.')
+				      if (!(input.charAt (i - 1) == 'r' || input.charAt (i - 1) == 's' || input.charAt (i - 1) == 'n' || input.charAt (i - 1) == 't' || input.charAt (i - 1) == 'd'))
+				      {
+                foundError = true;
+						   	errorString = "Illegal char: " + input.charAt (i);
+						   	nagari = diacritics = errorString;
+						   	return;
+						  }
+				}
+         String inputA = input;
 				 char [] arrayInput = inputA.toCharArray ();
 				 for (int i = 0; i <= inputA.length () - 4; i ++)
 				  		if (inputA.substring (i, i + 4).equals ("r.r."))
-				  		  {
+				  		{
 				  			arrayInput [i] = 'L';
 				  			arrayInput [i + 1] = '!';
 				  			arrayInput [i + 2] = '!';
@@ -90,36 +90,36 @@ public class SanskritLineConvert
 				  			i += 3;
 				  			if (i >= inputA.length () - 1)
 				  			  break;
-					      }
+					    }
 				  inputA = new String (arrayInput);
 				  for (int i = 0; i <= inputA.length () - 3; i ++)
 					   if (inputA.substring (i, i + 3).equals ("t.h"))
 					     {
-							 arrayInput [i] = 'q';
-							 arrayInput [i + 1] = '!';
-							 arrayInput [i + 2] = '!';
-							 i += 2;
-							 if (i >= inputA.length () - 1)
-							   break;
+  							 arrayInput [i] = 'q';
+  							 arrayInput [i + 1] = '!';
+  							 arrayInput [i + 2] = '!';
+  							 i += 2;
+  							 if (i >= inputA.length () - 1)
+  							   break;
 					     }
 					   else
 					   if (inputA.substring (i, i + 3).equals ("d.h"))
-					     {
-						 	arrayInput [i] = 'w';
-						 	arrayInput [i + 1] = '!';
-						 	arrayInput [i + 2] = '!';
-						 	i += 2;
-						 	if (i >= inputA.length () - 1)
-						 	  break;
-					     }
+					    {
+  						 	arrayInput [i] = 'w';
+  						 	arrayInput [i + 1] = '!';
+  						 	arrayInput [i + 2] = '!';
+  						 	i += 2;
+  						 	if (i >= inputA.length () - 1)
+  						 	  break;
+					    }
 				  inputA = new String (arrayInput);
 				  for (int i = 0; i <= inputA.length () - 2; i ++)
 					   if (inputA.substring (i, i + 2).equals ("aa"))
 					     {
-						    arrayInput [i] = 'A';
-						    arrayInput [i + 1] = '!';
-						    if (i >= inputA.length () - 1)
-							   break;
+  						    arrayInput [i] = 'A';
+  						    arrayInput [i + 1] = '!';
+  						    if (i >= inputA.length () - 1)
+  							   break;
 					     }
 					   else
 					   if (inputA.substring (i, i + 2).equals ("ii"))

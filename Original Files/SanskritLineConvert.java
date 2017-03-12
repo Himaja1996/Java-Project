@@ -2,6 +2,7 @@ import javafx.collections.*;
 import java.util.*;
 public class SanskritLineConvert
       {
+//=============declarations===================================================
         Set<Character> allowedChars,
                        notAllowedInitChars,
                        consonants,
@@ -14,13 +15,15 @@ public class SanskritLineConvert
                singleWord;
         boolean foundError = false;
         char [] arrayProcessed;
+
+//=============Main Program===================================================
 	    public void wordConvert (String input)
 	    {
         singleWord = input;
-        setSets ();
+        setSets ();        //sets the collections to that provided
         nagari = "";
         diacritics = "";
-  			if (input.length () == 0)
+  			if (input.length () == 0) //if nothing written and pressed return
   			{
           foundError = true;
   				errorString = "Illegal: Empty input string.";

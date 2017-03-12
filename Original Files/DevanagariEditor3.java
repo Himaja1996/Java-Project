@@ -24,9 +24,7 @@ public class DevanagariEditor3
 		      {
                 content = new GridPane();
                 TextArea ta = new TextArea ();
-				content.setPadding (new Insets (height * 0.01, width * 0.01, height * 0.01, width * 0.01));
-				content.setAlignment (Pos.CENTER);
-
-
+        				content.setPadding (new Insets (height * 0.01, width * 0.01, height * 0.01, width * 0.01));
+        				content.setAlignment (Pos.CENTER);
 			  }
       }

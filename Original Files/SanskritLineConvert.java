@@ -59,12 +59,13 @@ public class SanskritLineConvert
 				      if (input.charAt (i - 1) != 's')*/
               switch(input.substring(0,input.length()))
 				      {
+
                 case "s\'":
-                foundError = true;
-						   	errorString = "Illegal char: " + input.charAt (i);
-						   	nagari = diacritics = errorString;
-						   	//return;
-                break;
+                  foundError = true;
+  						   	errorString = "Illegal char: " + input.charAt (i);
+  						   	nagari = diacritics = errorString;
+  						   	//return;
+                  break;
 						  //}
 				/*}
 				for (int i = 1; i < input.length (); i ++)
@@ -72,22 +73,23 @@ public class SanskritLineConvert
 
           /*if (input.charAt (i) == '<' || input.charAt (i) == '>')
 				      if (input.charAt (i - 1) != 'n')*/
-              case ("n<"||"n>"):
+                case ("n<"||"n>"):
 				      //{
-                foundError = true;
-						   	errorString = "Illegal char: " + input.charAt (i);
-						   	nagari = diacritics = errorString;
-						   	//return;
-                break;
+                  foundError = true;
+  						   	errorString = "Illegal char: " + input.charAt (i);
+  						   	nagari = diacritics = errorString;
+  						   	//return;
+                  break;
+
                 default:
-                return;
+                  return;
 						  }
 				}
 
 //============================================================================
 				for (int i = 1; i < input.length (); i ++)
 				{
-          if (input.charAt (i) == '.')
+            if (input.charAt (i) == '.')
 				      if (!(input.charAt (i - 1) == 'r' || input.charAt (i - 1) == 's' || input.charAt (i - 1) == 'n' || input.charAt (i - 1) == 't' || input.charAt (i - 1) == 'd'))
 				      {
                 foundError = true;

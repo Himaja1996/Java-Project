@@ -23,13 +23,16 @@ public class SanskritLineConvert
         setSets ();        //sets the collections to that provided
         nagari = "";
         diacritics = "";
-  			if (input.length () == 0) //if nothing written and pressed return
+
+        //if nothing written and pressed return
+        if (input.length () == 0)
   			{
           foundError = true;
   				errorString = "Illegal: Empty input string.";
   				return;
   			}
 
+        // if Illegal Characters entered
 				if (notAllowedInitChars.contains (input.charAt (0)))
 				{
           foundError = true;
@@ -48,6 +51,7 @@ public class SanskritLineConvert
 				    return;
 		      }
 				}
+
 				for (int i = 1; i < input.length (); i ++)
 				{
           if (input.charAt (i) == '\'')

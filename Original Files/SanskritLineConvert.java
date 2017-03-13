@@ -55,8 +55,6 @@ public class SanskritLineConvert
 //============= Switch Cases = 0 ============================================
 				for (int i = 1; i < input.length (); i ++)
 				{
-          /*if (input.charAt (i) == '\'')
-				      if (input.charAt (i - 1) != 's')*/
               switch(input.substring(i-1,i))
 				      {
 
@@ -64,44 +62,26 @@ public class SanskritLineConvert
                   foundError = true;
   						   	errorString = "Illegal char: " + input.charAt (i);
   						   	nagari = diacritics = errorString;
-  						   	//return;
                   break;
-					   //}
-				/*}
-				for (int i = 1; i < input.length (); i ++)
-				{*/
 
-          /*if (input.charAt (i) == '<' || input.charAt (i) == '>')
-				      if (input.charAt (i - 1) != 'n')*/
                 case "n<":
                 case "n>":
-				      //{
                   foundError = true;
   						   	errorString = "Illegal char: " + input.charAt (i);
   						   	nagari = diacritics = errorString;
-  						   	//return;
                   break;
 
-				/*for (int i = 1; i < input.length (); i ++)
-				{
-            if (input.charAt (i) == '.')
-				      if (!(input.charAt (i - 1) == 'r' || input.charAt (i - 1) == 's' || input.charAt (i - 1) == 'n' || input.charAt (i - 1) == 't' || input.charAt (i - 1) == 'd'))
-				      {*/
-              case "r.":
-              case "s.":
-              case "n.":
-              case "t.":
-              case "d.":
-                foundError = true;
-						   	errorString = "Illegal char: " + input.charAt (i);
-						   	nagari = diacritics = errorString;
-						   	break;
-						//  }
-				//}
+                case "r.":
+                case "s.":
+                case "n.":
+                case "t.":
+                case "d.":
+                  foundError = true;
+  						   	errorString = "Illegal char: " + input.charAt (i);
+  						   	nagari = diacritics = errorString;
+  						   	break;
 
-              default:
-                return;
-
+                default: return;
             }
        }
 
@@ -113,7 +93,7 @@ public class SanskritLineConvert
 				 for (int i = 0; i <= inputA.length () - 4; i ++)
 				  		switch(inputA.substring (i, i + 4))
 				  		{
-                
+
                 case "r.r.":
 				  			arrayInput [i] = 'L';
 				  			arrayInput [i + 1] = '!';
@@ -122,33 +102,32 @@ public class SanskritLineConvert
 				  			i += 3;
 				  			if (i >= inputA.length () - 1)
 				  			  break;
-                default:
-                return;
-
+                default: return;
+                
 					    }
 
 //============= Switch Cases = 2 ============================================
 				  inputA = new String (arrayInput);
 				  for (int i = 0; i <= inputA.length () - 3; i ++)
-					   if (inputA.substring (i, i + 3).equals ("t.h"))
+					   switch(inputA.substring (i, i + 3))
 					     {
-  							 arrayInput [i] = 'q';
-  							 arrayInput [i + 1] = '!';
-  							 arrayInput [i + 2] = '!';
-  							 i += 2;
-  							 if (i >= inputA.length () - 1)
-  							   break;
-					     }
-					   else
-					   if (inputA.substring (i, i + 3).equals ("d.h"))
-					    {
-  						 	arrayInput [i] = 'w';
-  						 	arrayInput [i + 1] = '!';
-  						 	arrayInput [i + 2] = '!';
-  						 	i += 2;
-  						 	if (i >= inputA.length () - 1)
-  						 	  break;
+                 case "t.h":
+    							 arrayInput [i] = 'q';
+    							 arrayInput [i + 1] = '!';
+    							 arrayInput [i + 2] = '!';
+    							 i += 2;
+    							 if (i >= inputA.length () - 1)
+    							   break;
+
+					      case "d.h":
+    						 	arrayInput [i] = 'w';
+    						 	arrayInput [i + 1] = '!';
+    						 	arrayInput [i + 2] = '!';
+    						 	i += 2;
+    						 	if (i >= inputA.length () - 1)
+    						 	  break;
 					    }
+
 				  inputA = new String (arrayInput);
 				  for (int i = 0; i <= inputA.length () - 2; i ++)
 					   if (inputA.substring (i, i + 2).equals ("aa"))

@@ -266,39 +266,42 @@ public class SanskritLineConvert
            }
 
 //===========================================================================
-		  int exclams = 0;
+// Presently working in this block!
+      int exclams = 0;
 		  for (int i = 0; i < arrayInput.length; i ++)
 			 if (arrayInput [i] == '!')
 			   exclams ++;
+
 		  arrayProcessed = new char [arrayInput.length - exclams];
 		  int jA = 0;
 		  for (int i = 0; i < arrayInput.length; i ++)
-		     if (arrayInput [i] != '!')
+		    if (arrayInput [i] != '!')
 			   arrayProcessed [jA ++] = arrayInput [i];
 
 				 for (int i = 0; i < arrayProcessed.length; i ++)
-				    {
-				       if (consonants.contains (arrayProcessed [i]))
-				         if ( i < (arrayProcessed.length - 1))
-				           if (postVowels.contains (arrayProcessed [i + 1]))
-				           {
-						   	   foundError = true;
-						   	   errorString = "Illegal postConsonant char: " + arrayProcessed [i + 1];
-						   	   nagari = diacritics = errorString;
-						   	   return;
-						   	}
-				    }
+				 {
+           if (consonants.contains (arrayProcessed [i]))
+				    if ( i < (arrayProcessed.length - 1))
+				      if (postVowels.contains (arrayProcessed [i + 1]))
+				      {
+                foundError = true;
+						   	errorString = "Illegal postConsonant char: " + arrayProcessed [i + 1];
+						   	nagari = diacritics = errorString;
+						   	return;
+						  }
+				 }
+
 				 for (int i = 0; i < arrayProcessed.length; i ++)
 				    {
 				       if (vowels.contains (arrayProcessed [i]))
 				         if (i < (arrayProcessed.length - 1))
 				           if (postConsonants.contains (arrayProcessed [i + 1]))
 				           {
-						   	   foundError = true;
-						   	   errorString = "Illegal postVowel char: " + arrayProcessed [i + 1];
-						   	   nagari = diacritics = errorString;
-						   	   return;
-						   	}
+  						   	   foundError = true;
+  						   	   errorString = "Illegal postVowel char: " + arrayProcessed [i + 1];
+  						   	   nagari = diacritics = errorString;
+  						   	   return;
+						   	   }
 				    }
 
 				 for (int i = 1; i < arrayProcessed.length; i ++)
@@ -312,7 +315,7 @@ public class SanskritLineConvert
 						   	   return;
 						   	}
 				    }
-          for (int i = 0; i < arrayProcessed.length - 1; i ++)
+         for (int i = 0; i < arrayProcessed.length - 1; i ++)
              if (vowels.contains (arrayProcessed [i]) && vowels.contains (arrayProcessed [i + 1]))
 			   {
 				   foundError = true;
@@ -320,6 +323,8 @@ public class SanskritLineConvert
 				   nagari = diacritics = errorString;
 				   return;
 				}
+
+//===========================================================================
 int i = 0;
 if (vowels.contains (arrayProcessed [i]))
   {

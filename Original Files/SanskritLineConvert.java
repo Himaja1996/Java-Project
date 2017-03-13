@@ -52,7 +52,7 @@ public class SanskritLineConvert
 		      }
 				}
 
-//============= Switch Cases to be applied ===================================
+//============= Switch Cases = 0 ============================================
 				for (int i = 1; i < input.length (); i ++)
 				{
           /*if (input.charAt (i) == '\'')
@@ -105,12 +105,16 @@ public class SanskritLineConvert
             }
        }
 
-//=========================================================================       
+//===========================================================================
          String inputA = input;
 				 char [] arrayInput = inputA.toCharArray ();
+
+//============= Switch Cases = 1 ============================================
 				 for (int i = 0; i <= inputA.length () - 4; i ++)
-				  		if (inputA.substring (i, i + 4).equals ("r.r."))
+				  		switch(inputA.substring (i, i + 4))
 				  		{
+                
+                case "r.r.":
 				  			arrayInput [i] = 'L';
 				  			arrayInput [i + 1] = '!';
 				  			arrayInput [i + 2] = '!';
@@ -118,7 +122,12 @@ public class SanskritLineConvert
 				  			i += 3;
 				  			if (i >= inputA.length () - 1)
 				  			  break;
+                default:
+                return;
+
 					    }
+
+//============= Switch Cases = 2 ============================================
 				  inputA = new String (arrayInput);
 				  for (int i = 0; i <= inputA.length () - 3; i ++)
 					   if (inputA.substring (i, i + 3).equals ("t.h"))

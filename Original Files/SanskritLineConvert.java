@@ -53,11 +53,11 @@ public class SanskritLineConvert
 				}
 
 //============= Switch Cases to be applied ===================================
-				/*for (int i = 1; i < input.length (); i ++)
+				for (int i = 1; i < input.length (); i ++)
 				{
-          if (input.charAt (i) == '\'')
+          /*if (input.charAt (i) == '\'')
 				      if (input.charAt (i - 1) != 's')*/
-              switch(input.substring(0,input.length()))
+              switch(input.substring(i-1,i))
 				      {
 
                 case "s\'":
@@ -66,14 +66,15 @@ public class SanskritLineConvert
   						   	nagari = diacritics = errorString;
   						   	//return;
                   break;
-						  //}
+					   //}
 				/*}
 				for (int i = 1; i < input.length (); i ++)
 				{*/
 
           /*if (input.charAt (i) == '<' || input.charAt (i) == '>')
 				      if (input.charAt (i - 1) != 'n')*/
-                case ("n<"||"n>"):
+                case "n<":
+                case "n>":
 				      //{
                   foundError = true;
   						   	errorString = "Illegal char: " + input.charAt (i);
@@ -83,6 +84,7 @@ public class SanskritLineConvert
 
                 default:
                   return;
+
 						  }
 				}
 

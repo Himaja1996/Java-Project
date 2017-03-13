@@ -103,7 +103,7 @@ public class SanskritLineConvert
 				  			if (i >= inputA.length () - 1)
 				  			  break;
                 default: return;
-                
+
 					    }
 
 //============= Switch Cases = 2 ============================================
@@ -128,176 +128,144 @@ public class SanskritLineConvert
     						 	  break;
 					    }
 
+//============= Switch Cases = 3 ============================================
 				  inputA = new String (arrayInput);
+
 				  for (int i = 0; i <= inputA.length () - 2; i ++)
-					   if (inputA.substring (i, i + 2).equals ("aa"))
-					     {
+					   switch(inputA.substring (i, i + 2))
+					   {
+
+               case "aa":
   						    arrayInput [i] = 'A';
   						    arrayInput [i + 1] = '!';
   						    if (i >= inputA.length () - 1)
-  							   break;
-					     }
-					   else
-					   if (inputA.substring (i, i + 2).equals ("ii"))
-					     {
-						    arrayInput [i] = 'I';
-						    arrayInput [i + 1] = '!';
-						    if (i >= inputA.length () - 1)
-							  break;
-					     }
-					   else
-					   if (inputA.substring (i, i + 2).equals ("uu"))
-					     {
-					  	    arrayInput [i] = 'U';
-						    arrayInput [i + 1] = '!';
-						    if (i >= inputA.length () - 1)
-							  break;
-					     }
-					   else
-					   if (inputA.substring (i, i + 2).equals ("r."))
-					     {
-						    arrayInput [i] = 'R';
-						    arrayInput [i + 1] = '!';
-						    if (i >= inputA.length () - 1)
-							   break;
-					   }
-					  else
-					  if (inputA.substring (i, i + 2).equals ("ai"))
-					    {
-						  arrayInput [i] = 'E';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					    }
-					  else
-					  if (inputA.substring (i, i + 2).equals ("au"))
-					    {
-						  arrayInput [i] = 'O';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					    }
-					  else
-					  if (inputA.substring (i, i + 2).equals ("kh"))
-					    {
-						  arrayInput [i] = 'Z';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					    }
-					  else
-					  if (inputA.substring (i, i + 2).equals ("gh"))
-					    {
-						  arrayInput [i] = 'Y';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					    }
-					  else
-					  if (inputA.substring (i, i + 2).equals ("ch"))
-					    {
-						  arrayInput [i] = 'X';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("jh"))
-					   {
-						  arrayInput [i] = 'W';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("t."))
-					   {
-						  arrayInput [i] = 'T';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("d."))
-					   {
-						  arrayInput [i] = 'D';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("n."))
-					   {
-						  arrayInput [i] = 'N';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							 break;
-					   }
-                     else
-					 if (inputA.substring (i, i + 2).equals ("th"))
-					   {
-						  arrayInput [i] = 'V';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("dh"))
-					   {
-						  arrayInput [i] = 'Q';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("ph"))
-					   {
-						  arrayInput [i] = 'P';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-						    break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("bh"))
-					   {
-						 arrayInput [i] = 'B';
-						 arrayInput [i + 1] = '!';
-						 if (i >= inputA.length () - 1)
-						   break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("s'"))
-					   {
-						  arrayInput [i] = 'z';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("s."))
-					   {
-						  arrayInput [i] = 'S';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("n<"))
-					   {
-						  arrayInput [i] = 'G';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
-					 else
-					 if (inputA.substring (i, i + 2).equals ("n>"))
-					   {
-						  arrayInput [i] = 'J';
-						  arrayInput [i + 1] = '!';
-						  if (i >= inputA.length () - 1)
-							break;
-					   }
+  							  break;
 
+               case "ii":
+  						    arrayInput [i] = 'I';
+  						    arrayInput [i + 1] = '!';
+  						    if (i >= inputA.length () - 1)
+  							  break;
+
+               case "uu":
+  					  	  arrayInput [i] = 'U';
+  						    arrayInput [i + 1] = '!';
+  						    if (i >= inputA.length () - 1)
+  							  break;
+
+               case "r.":
+  						    arrayInput [i] = 'R';
+  						    arrayInput [i + 1] = '!';
+  						    if (i >= inputA.length () - 1)
+  							  break;
+
+               case "ai":
+    						  arrayInput [i] = 'E';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "au":
+    						  arrayInput [i] = 'O';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "kh":
+    						  arrayInput [i] = 'Z';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "gh":
+    						  arrayInput [i] = 'Y';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "ch":
+    						  arrayInput [i] = 'X';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "jh":
+    						  arrayInput [i] = 'W';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "t.":
+    						  arrayInput [i] = 'T';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "d.":
+    						  arrayInput [i] = 'D';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "n.":
+    						  arrayInput [i] = 'N';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "th":
+    						  arrayInput [i] = 'V';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "dh":
+    						  arrayInput [i] = 'Q';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "ph":
+    						  arrayInput [i] = 'P';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    						  break;
+
+               case "bh":
+      						arrayInput [i] = 'B';
+      						arrayInput [i + 1] = '!';
+      						if (i >= inputA.length () - 1)
+      						break;
+
+               case "s'":
+      						arrayInput [i] = 'z';
+      						arrayInput [i + 1] = '!';
+      						if (i >= inputA.length () - 1)
+      					  break;
+
+               case "s.":
+    						  arrayInput [i] = 'S';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "n<":
+    						  arrayInput [i] = 'G';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               case "n>":
+    						  arrayInput [i] = 'J';
+    						  arrayInput [i + 1] = '!';
+    						  if (i >= inputA.length () - 1)
+    							break;
+
+               default: return;
+
+           }
+
+//===========================================================================
 		  int exclams = 0;
 		  for (int i = 0; i < arrayInput.length; i ++)
 			 if (arrayInput [i] == '!')

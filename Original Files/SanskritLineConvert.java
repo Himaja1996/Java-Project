@@ -82,24 +82,30 @@ public class SanskritLineConvert
   						   	//return;
                   break;
 
-                default:
-                  return;
-
-						  }
-				}
-
-//============================================================================
-				for (int i = 1; i < input.length (); i ++)
+				/*for (int i = 1; i < input.length (); i ++)
 				{
             if (input.charAt (i) == '.')
 				      if (!(input.charAt (i - 1) == 'r' || input.charAt (i - 1) == 's' || input.charAt (i - 1) == 'n' || input.charAt (i - 1) == 't' || input.charAt (i - 1) == 'd'))
-				      {
+				      {*/
+              case "r.":
+              case "s.":
+              case "n.":
+              case "t.":
+              case "d.":
                 foundError = true;
 						   	errorString = "Illegal char: " + input.charAt (i);
 						   	nagari = diacritics = errorString;
-						   	return;
-						  }
-				}
+						   	break;
+						//  }
+				//}
+
+              default:
+                return;
+
+            }
+       }
+
+//=========================================================================       
          String inputA = input;
 				 char [] arrayInput = inputA.toCharArray ();
 				 for (int i = 0; i <= inputA.length () - 4; i ++)

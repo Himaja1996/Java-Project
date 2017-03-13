@@ -2,7 +2,7 @@ import javafx.collections.*;
 import java.util.*;
 public class SanskritLineConvert
       {
-//=============declarations===================================================
+//============= Declarations =================================================
         Set<Character> allowedChars,
                        notAllowedInitChars,
                        consonants,
@@ -16,7 +16,7 @@ public class SanskritLineConvert
         boolean foundError = false;
         char [] arrayProcessed;
 
-//=============Main Program===================================================
+//============= Main Program =================================================
 	    public void wordConvert (String input)
 	    {
         singleWord = input;
@@ -52,6 +52,7 @@ public class SanskritLineConvert
 		      }
 				}
 
+//============= Switch Cases to be applied ===================================
 				for (int i = 1; i < input.length (); i ++)
 				{
           if (input.charAt (i) == '\'')
@@ -62,9 +63,10 @@ public class SanskritLineConvert
 						   	nagari = diacritics = errorString;
 						   	return;
 						  }
-				}
+				/*}
 				for (int i = 1; i < input.length (); i ++)
-				{
+				{*/
+        
           if (input.charAt (i) == '<' || input.charAt (i) == '>')
 				      if (input.charAt (i - 1) != 'n')
 				      {
@@ -74,6 +76,8 @@ public class SanskritLineConvert
 						   	return;
 						  }
 				}
+
+//============================================================================
 				for (int i = 1; i < input.length (); i ++)
 				{
           if (input.charAt (i) == '.')
